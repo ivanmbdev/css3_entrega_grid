@@ -1,0 +1,141 @@
+:root {
+  --primary-color: rgb(236, 236, 236);
+  --secondary-color: rgb(21, 21, 21);
+  --blue-color: #2bc5cd;
+  --orange-color: #ff693d;
+  --border: 2px solid var(--blue-color);
+  --spacing: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 10px;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  border: 5px var(--blue-color) dashed;
+  margin: auto;
+  padding: var(--spacing);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px;
+  border-radius: 50px;
+  background-color: var(--primary-color);
+}
+
+header {
+  background-color: var(--blue-color);
+  display: grid;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+header h1 {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+header p {
+  color: white;
+  text-align: justify;
+}
+
+main {
+  border: var(--border);
+  color: var(--blue-color);
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  align-items: center;
+  align-content: center;
+}
+
+footer {
+  color: white;
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  background-color: var(--orange-color);
+}
+
+footer button {
+  width: 150px;
+  margin-left: 20px;
+  padding: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: solid 1px black;
+}
+
+footer button:hover {
+  cursor: pointer;
+}
+
+/* Resto del CSS */
+
+.school {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+}
+
+.student {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
+}
+
+.time {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
+}
+
+.alumni {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
+}
+
+.alumni,
+.school,
+.student,
+.time {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Medias queries */
+
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+    display: grid;
+    padding: 10px;
+    margin: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: var(--spacing);
+  }
+
+  header {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  main,
+  .alumni,
+  .school,
+  .student,
+  .time {
+    grid-row-end: span 1;
+  }
+
+  footer {
+    grid-row-start: auto;
+    grid-row-end: auto;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
